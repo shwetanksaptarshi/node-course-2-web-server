@@ -2,6 +2,7 @@ const express = require('express');
 const hbs = require('hbs');
 const fs= require('fs');
 
+const port = process.env.PORT || 3000;
 var app = express();
 
 app.set('view engine','hbs');
@@ -71,6 +72,6 @@ app.get('/bad',(req,res)=>{
         errorMessage : 'Page not found' 
     });
 });
-app.listen(3000,()=>{
-    console.log('Server started on port 3000');
+app.listen(port,()=>{
+    console.log(`Server started on port ${port}`);
 });
