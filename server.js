@@ -14,7 +14,7 @@ hbs.registerHelper('screamIt',(text)=>{
 return text.toUpperCase();
 });
 
-// Middelware
+// Middleware
 // -----------------------------------------------------------------------------
 
 
@@ -70,6 +70,13 @@ app.get('/bad',(req,res)=>{
     res.send({
         errorCode : 404,
         errorMessage : 'Page not found' 
+    });
+});
+
+
+app.get('/projects',(req,res)=>{
+    res.render('projects.hbs',{
+        
     });
 });
 app.listen(port,()=>{
