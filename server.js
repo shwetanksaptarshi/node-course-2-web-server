@@ -31,14 +31,14 @@ app.use((req,res,next)=>{
     });
     next();
 });
-app.use(express.static(__dirname+'/public'));
+
 app.use((req,res,next)=>{
 res.render('maintenance.hbs',{
     pageBody : 'Maintenance page rendered'
 })
 });
 
-
+app.use(express.static(__dirname+'/public'));
 // -----------------------------------------------------------------------------
 
 
