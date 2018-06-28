@@ -32,11 +32,11 @@ app.use((req,res,next)=>{
     next();
 });
 
-app.use((req,res,next)=>{
-res.render('maintenance.hbs',{
-    pageBody : 'Maintenance page rendered'
-})
-});
+// app.use((req,res,next)=>{
+// res.render('maintenance.hbs',{
+//     pageBody : 'Maintenance page rendered'
+// })
+// });
 
 app.use(express.static(__dirname+'/public'));
 // -----------------------------------------------------------------------------
@@ -76,7 +76,10 @@ app.get('/bad',(req,res)=>{
 
 app.get('/projects',(req,res)=>{
     res.render('projects.hbs',{
-        
+        header: 'Projects Page',
+        welcomeMessage:'Project Page Welcome Message',
+        project1:'NodeJS',
+        project2:'Heroku'
     });
 });
 app.listen(port,()=>{
